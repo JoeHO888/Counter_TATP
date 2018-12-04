@@ -12,7 +12,8 @@ class App extends Component {
 		})}
 	
 	modifyNumberOfCounters = ()=>{
-		this.setState({sum:0,group:new Array(this.state.size).fill(<Counter onUpdate={this.addValue}/>)})
+		this.state.sum = 0
+		this.setState({sum:0,group:new Array(this.state.size).fill(<Counter key={Date.now()} onUpdate={this.addValue}/>)})
 	}
 	updateSize = (event) =>{
 		this.setState({size:parseInt(event.target.value)})

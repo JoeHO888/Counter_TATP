@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 
 class Counter extends Component {
-	state = {number:0}
+	state = {number:this.props.init}
 	addValue = ()=>{
 		this.setState({number:this.state.number+1});
 		{this.props.onUpdate(1)};
