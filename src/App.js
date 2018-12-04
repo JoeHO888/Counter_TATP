@@ -5,8 +5,7 @@ import Counter from './counter.js' ;
 import Button from './Button.js';
 
 class App extends Component {
-	state = {group:new Array(3).fill(0).map(()=>{return {count:0,id:Math.random()}}),sum:0,size:3,number:0}
-	
+	state = {group:new Array(3).fill(0).map(()=>{return {count:0,id:Math.random()}}),size:3}
 	modifyValue = (value,id)=>{this.setState({
 		group:this.state.group.map((e)=>{
 			if(e.id==id){
@@ -16,7 +15,7 @@ class App extends Component {
 		})}
 	
 	modifyNumberOfCounters = ()=>{
-		this.setState({sum:0,group:new Array(this.state.size).fill(0).map(()=>{return {count:0,id:Math.random()}})})
+		this.setState({group:new Array(this.state.size).fill(0).map(()=>{return {count:0,id:Math.random()}})})
 	}
 	updateSize = (event) =>{
 		this.setState({size:parseInt(event.target.value)})
