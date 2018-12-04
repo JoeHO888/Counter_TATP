@@ -2,20 +2,17 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 
 class Counter extends Component {
-	state = {number:this.props.init}
 	addValue = ()=>{
-		this.setState({number:this.state.number+1});
-		{this.props.onUpdate(1)};
+		this.props.updateValue(1,this.props.id);
 		}
 	minusValue = ()=>{
-		this.setState({number:this.state.number-1});
-		{this.props.onUpdate(-1)}
+		this.props.updateValue(-1,this.props.id);
 		}
   render() {
     return (
 	<div>
 	<button onClick={this.addValue}>+</button> 
-	{this.state.number}<button onClick={this.minusValue}>-</button>
+	{this.props.number}<button onClick={this.minusValue}>-</button>
 	
 	</div>
     );
